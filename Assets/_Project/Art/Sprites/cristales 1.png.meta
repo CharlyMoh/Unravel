@@ -1,0 +1,418 @@
+fileFormatVersion: 2
+guid: 3dbcc6b7a96c06d46bd784a7b54f769f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1543936106207858438
+    second: cristales 1_0
+  - first:
+      213: -5745830719574122586
+    second: cristales 1_1
+  - first:
+      213: 7580367151581371973
+    second: cristales 1_2
+  - first:
+      213: 7393603198102223406
+    second: cristales 1_3
+  - first:
+      213: 5911598738780462877
+    second: cristales 1_4
+  - first:
+      213: 2536000689751386891
+    second: cristales 1_5
+  - first:
+      213: 651905899293641001
+    second: cristales 1_6
+  - first:
+      213: 570223295552136943
+    second: cristales 1_7
+  - first:
+      213: 2398026119045664020
+    second: cristales 1_8
+  - first:
+      213: 4611083352278366085
+    second: cristales 1_9
+  - first:
+      213: 2358568862241405378
+    second: cristales 1_10
+  - first:
+      213: 4285645096164872435
+    second: cristales 1_11
+  - first:
+      213: 1663127407771896738
+    second: cristales 1_12
+  - first:
+      213: 5451150274595852689
+    second: cristales 1_13
+  - first:
+      213: 6892182128272323664
+    second: cristales 1_14
+  - first:
+      213: -8065101470254179961
+    second: cristales 1_15
+  - first:
+      213: -801694437124395442
+    second: cristales 1_16
+  - first:
+      213: 8192500532123269574
+    second: cristales 1_17
+  - first:
+      213: 6095038560594110206
+    second: cristales 1_18
+  - first:
+      213: -4208074508584804817
+    second: cristales 1_19
+  - first:
+      213: 7642109812650209991
+    second: cristales 1_20
+  - first:
+      213: -5950059140787974345
+    second: cristales 1_21
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationMethod: 0
+  spriteTessellationDetail: -1
+  spriteGeometrySubdivision: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: cristales 1_0
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 939
+        width: 436
+        height: 439
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60f4b6e55b92d6510800000000000000
+      internalID: 1543936106207858438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cristales 1_1
+      rect:
+        serializedVersion: 2
+        x: 619
+        y: 940
+        width: 439
+        height: 436
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6afd14c3765b240b0800000000000000
+      internalID: -5745830719574122586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cristales 1_2
+      rect:
+        serializedVersion: 2
+        x: 1151
+        y: 939
+        width: 441
+        height: 437
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54e1c0903cfd23960800000000000000
+      internalID: 7580367151581371973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cristales 1_3
+      rect:
+        serializedVersion: 2
+        x: 1685
+        y: 940
+        width: 443
+        height: 436
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2a33198fea5b9660800000000000000
+      internalID: 7393603198102223406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cristales 1_4
+      rect:
+        serializedVersion: 2
+        x: 2214
+        y: 939
+        width: 447
+        height: 448
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1f18af5bb73a0250800000000000000
+      internalID: 5911598738780462877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cristales 1_5
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 130
+        width: 514
+        height: 528
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0be6c6e03fa13320800000000000000
+      internalID: 2536000689751386891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cristales 1_8
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 111
+        width: 731
+        height: 571
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41d43dbcc00874120800000000000000
+      internalID: 2398026119045664020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cristales 1_10
+      rect:
+        serializedVersion: 2
+        x: 1530
+        y: 81
+        width: 557
+        height: 713
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c9323c42e15bb020800000000000000
+      internalID: 2358568862241405378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cristales 1_11
+      rect:
+        serializedVersion: 2
+        x: 2137
+        y: 81
+        width: 558
+        height: 785
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f05d46328ba97b30800000000000000
+      internalID: 4285645096164872435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 6748ca21799a4d14582e78cf253cac7d
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      cristales 1_0: 1543936106207858438
+      cristales 1_1: -5745830719574122586
+      cristales 1_10: 2358568862241405378
+      cristales 1_11: 4285645096164872435
+      cristales 1_12: 1663127407771896738
+      cristales 1_13: 5451150274595852689
+      cristales 1_14: 6892182128272323664
+      cristales 1_15: -8065101470254179961
+      cristales 1_16: -801694437124395442
+      cristales 1_17: 8192500532123269574
+      cristales 1_18: 6095038560594110206
+      cristales 1_19: -4208074508584804817
+      cristales 1_2: 7580367151581371973
+      cristales 1_20: 7642109812650209991
+      cristales 1_21: -5950059140787974345
+      cristales 1_3: 7393603198102223406
+      cristales 1_4: 5911598738780462877
+      cristales 1_5: 2536000689751386891
+      cristales 1_6: 651905899293641001
+      cristales 1_7: 570223295552136943
+      cristales 1_8: 2398026119045664020
+      cristales 1_9: 4611083352278366085
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
