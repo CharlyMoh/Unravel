@@ -4,14 +4,14 @@ public class TrampaColumna : MonoBehaviour
 {
     [Header("Referencias Visuales")]
     public SpriteRenderer spriteRenderer;
-    public Sprite[] fasesColumna; // Aquí guardaremos los 7 sprites
+    public Sprite[] fasesColumna; // Aqui guardaremos los 7 sprites
 
-    [Header("Configuración de Distancia")]
+    [Header("Configuracion de Distancia")]
     public float distanciaMaxima = 15f; // Distancia donde empieza a abrirse
-    public float distanciaMinima = 1.5f; // Distancia donde la boca está totalmente abierta
+    public float distanciaMinima = 1.5f; // Distancia donde la boca esta totalmente abierta
 
-    [Header("Configuración de Daño")]
-    public float dañoMaximoPorSegundo = 20f; // Daño cuando está en fase máxima (fase 6)
+    [Header("Configuracion de Dano")]
+    public float danoMaximoPorSegundo = 20f; // Dano cuando esta en fase maxima (fase 6)
 
     private Transform transformJugador;
     private int estadoActual = 0; // Va del 0 (cerrada) al 6 (abierta total)
@@ -19,12 +19,12 @@ public class TrampaColumna : MonoBehaviour
 
     private void Update()
     {
-        // Solo calculamos si el jugador está dentro de la gran caja verde
+        // Solo calculamos si el jugador esta dentro de la gran caja verde
         if (jugadorEnRango && transformJugador != null)
         {
-            // Detectamos si el jugador está usando la mecánica de sigilo.
+            // Detectamos si el jugador esta usando la mecanica de sigilo.
             // Nota: Input.GetKey lee la tecla directamente. Si ya tienes una variable 
-            // como "estaEnSigilo" en tu PlayerController, es mejor llamarla desde allí.
+            // como "estaEnSigilo" en tu PlayerController, es mejor llamarla desde alli.
             bool enSigilo = Input.GetKey(KeyCode.LeftControl);
 
             if (enSigilo)
@@ -35,9 +35,9 @@ public class TrampaColumna : MonoBehaviour
             }
             else
             {
-                // Si camina normal o suelta el Shift, la trampa reacciona a la distancia
+                // Si camina normal o suelta el Control, la trampa reacciona a la distancia
                 CalcularEstadoPorDistancia();
-                AplicarDañoGradual();
+                AplicarDanoGradual();
             }
         }
     }
@@ -55,7 +55,7 @@ public class TrampaColumna : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            // El jugador huyó: apagar la trampa
+            // El jugador huyo: apagar la trampa
             jugadorEnRango = false;
             transformJugador = null;
             estadoActual = 0;
@@ -65,17 +65,17 @@ public class TrampaColumna : MonoBehaviour
 
     private void CalcularEstadoPorDistancia()
     {
-        // 1. ¿A qué distancia está el Cartógrafo?
+        // 1. A que distancia esta el Cartografo?
         float distancia = Vector2.Distance(transform.position, transformJugador.position);
 
-        // 2. Definir en qué estado debe estar según la distancia
+        // 2. Definir en que estado debe estar segun la distancia
         if (distancia >= distanciaMaxima)
         {
             estadoActual = 0;
         }
         else if (distancia <= distanciaMinima)
         {
-            // Si está muy cerca, estado máximo (índice 6 en un arreglo de 7 sprites)
+            // Si esta muy cerca, estado maximo (indice 6 en un arreglo de 7 sprites)
             estadoActual = fasesColumna.Length - 1;
         }
         else
@@ -93,17 +93,17 @@ public class TrampaColumna : MonoBehaviour
         spriteRenderer.sprite = fasesColumna[estadoActual];
     }
 
-    private void AplicarDañoGradual()
+    private void AplicarDanoGradual()
     {
-        // Si la boca está minimamente abierta, empieza a hacer daño
+        // Si la boca esta minimamente abierta, empieza a hacer dano
         if (estadoActual > 0)
         {
-            // Multiplicador: Fase 3 hace el 50% de daño, Fase 6 hace el 100% de daño
-            float multiplicadorDaño = (float)estadoActual / (fasesColumna.Length - 1);
-            float dañoAAplicar = dañoMaximoPorSegundo * multiplicadorDaño * Time.deltaTime;
+            // Multiplicador: Fase 3 hace el 50% de dano, Fase 6 hace el 100% de dano
+            float multiplicadorDano = (float)estadoActual / (fasesColumna.Length - 1);
+            float danoAAplicar = danoMaximoPorSegundo * multiplicadorDano * Time.deltaTime;
 
-            // Aquí enviarás el daño a la vida de tu jugador en el futuro
-            Debug.Log($"Boca Fase {estadoActual} - Daño aplicado: {dañoAAplicar}");
+            // Aqui enviaras el dano a la vida de tu jugador en el futuro
+            Debug.Log($"Boca Fase {estadoActual} - Dano aplicado: {danoAAplicar}");
         }
     }
 }
