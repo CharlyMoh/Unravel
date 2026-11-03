@@ -4,105 +4,88 @@ public class TrampaColumna : MonoBehaviour
 {
     [Header("Referencias Visuales")]
     public SpriteRenderer spriteRenderer;
-    public Sprite[] fasesColumna; // Aqui guardaremos los 7 sprites
+    public Sprite[] fasesColumna;
 
     [Header("Configuracion de Distancia")]
-    public float distanciaMaxima = 15f; // Distancia donde empieza a abrirse
-    public float distanciaMinima = 1.5f; // Distancia donde la boca esta totalmente abierta
+    public float distanciaMaxima = 15f;
+    public float distanciaMinima = 1.5f;
 
     [Header("Configuracion de Dano")]
-    public float danoMaximoPorSegundo = 20f; // Dano cuando esta en fase maxima (fase 6)
+    public float danoMaximoPorSegundo = 20f;
 
     private Transform transformJugador;
-    private int estadoActual = 0; // Va del 0 (cerrada) al 6 (abierta total)
-    private bool jugadorEnRango = false;
+    private int estadoActual = 0;
+
+    private void Start()
+    {
+        // Buscamos al Cartografo una sola vez al iniciar el nivel
+        GameObject jugador = GameObject.FindGameObjectWithTag("Player");
+        if (jugador != null)
+        {
+            transformJugador = jugador.transform;
+        }
+    }
 
     private void Update()
     {
-        // Solo calculamos si el jugador esta dentro de la gran caja verde
-        if (jugadorEnRango && transformJugador != null)
+        // Si el jugador no existe o murio, detenemos la logica
+        if (transformJugador == null) return;
+
+        // Calculamos la distancia matematica en tiempo real
+        float distancia = Vector2.Distance(transform.position, transformJugador.position);
+
+        // Verificamos si el jugador entro en el rango de vision
+        if (distancia <= distanciaMaxima)
         {
-            // Detectamos si el jugador esta usando la mecanica de sigilo.
-            // Nota: Input.GetKey lee la tecla directamente. Si ya tienes una variable 
-            // como "estaEnSigilo" en tu PlayerController, es mejor llamarla desde alli.
             bool enSigilo = Input.GetKey(KeyCode.LeftControl);
 
             if (enSigilo)
             {
-                // Si va en sigilo, la trampa "no lo escucha". Se apaga inmediatamente.
-                estadoActual = 0;
-                spriteRenderer.sprite = fasesColumna[0];
+                ApagarTrampa();
             }
             else
             {
-                // Si camina normal o suelta el Control, la trampa reacciona a la distancia
-                CalcularEstadoPorDistancia();
+                CalcularEstadoPorDistancia(distancia);
                 AplicarDanoGradual();
             }
         }
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
+        else
         {
-            transformJugador = collision.transform;
-            jugadorEnRango = true;
+            ApagarTrampa(); // Se apaga si se aleja demasiado
         }
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
+    private void ApagarTrampa()
     {
-        if (collision.CompareTag("Player"))
-        {
-            // El jugador huyo: apagar la trampa
-            jugadorEnRango = false;
-            transformJugador = null;
-            estadoActual = 0;
-            spriteRenderer.sprite = fasesColumna[0]; // Regresar al reposo
-        }
+        estadoActual = 0;
+        spriteRenderer.sprite = fasesColumna[0];
     }
 
-    private void CalcularEstadoPorDistancia()
+    private void CalcularEstadoPorDistancia(float distancia)
     {
-        // 1. A que distancia esta el Cartografo?
-        float distancia = Vector2.Distance(transform.position, transformJugador.position);
-
-        // 2. Definir en que estado debe estar segun la distancia
-        if (distancia >= distanciaMaxima)
+        if (distancia <= distanciaMinima)
         {
-            estadoActual = 0;
-        }
-        else if (distancia <= distanciaMinima)
-        {
-            // Si esta muy cerca, estado maximo (indice 6 en un arreglo de 7 sprites)
             estadoActual = fasesColumna.Length - 1;
         }
         else
         {
-            // Calcular el porcentaje de acercamiento (1.0 = pegado, 0.0 = lejos)
             float rango = distanciaMaxima - distanciaMinima;
             float distanciaActual = distanciaMaxima - distancia;
             float porcentaje = distanciaActual / rango;
 
-            // Mapear ese porcentaje a los 7 sprites disponibles
             estadoActual = Mathf.RoundToInt(porcentaje * (fasesColumna.Length - 1));
         }
 
-        // 3. Cambiar la imagen directamente sin usar Animator
         spriteRenderer.sprite = fasesColumna[estadoActual];
     }
 
     private void AplicarDanoGradual()
     {
-        // Si la boca esta minimamente abierta, empieza a hacer dano
         if (estadoActual > 0)
         {
-            // Multiplicador: Fase 3 hace el 50% de dano, Fase 6 hace el 100% de dano
             float multiplicadorDano = (float)estadoActual / (fasesColumna.Length - 1);
             float danoAAplicar = danoMaximoPorSegundo * multiplicadorDano * Time.deltaTime;
 
-            // Aqui enviaras el dano a la vida de tu jugador en el futuro
             Debug.Log($"Boca Fase {estadoActual} - Dano aplicado: {danoAAplicar}");
         }
     }

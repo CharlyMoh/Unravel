@@ -241,8 +241,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MenuParallax
   characterRect: {fileID: 2015654375}
   backgroundRect: {fileID: 1537582929}
-  characterStrength: 14
-  backgroundStrength: 6
+  characterStrength: 40
+  backgroundStrength: 20
   smoothTime: 4
 --- !u!114 &147365180
 MonoBehaviour:
@@ -260,8 +260,8 @@ MonoBehaviour:
   fadeCanvasGroup: {fileID: 389983564}
   characterRect: {fileID: 2015654375}
   buttonsCanvasGroup: {fileID: 1153288655}
-  transitionDuration: 1.2
-  characterExitDistance: 250
+  transitionDuration: 3
+  characterExitDistance: 400
   menuMusicSource: {fileID: 0}
 --- !u!1 &389983562
 GameObject:
