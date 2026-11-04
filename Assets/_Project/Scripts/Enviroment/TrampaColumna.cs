@@ -14,15 +14,16 @@ public class TrampaColumna : MonoBehaviour
     public float danoMaximoPorSegundo = 20f;
 
     private Transform transformJugador;
+    private SaludJugador saludJugador;
     private int estadoActual = 0;
 
     private void Start()
     {
-        // Buscamos al Cartografo una sola vez al iniciar el nivel
         GameObject jugador = GameObject.FindGameObjectWithTag("Player");
         if (jugador != null)
         {
             transformJugador = jugador.transform;
+            saludJugador = jugador.GetComponent<SaludJugador>(); // Guardamos la referencia
         }
     }
 
@@ -32,7 +33,7 @@ public class TrampaColumna : MonoBehaviour
         if (transformJugador == null) return;
 
         // Calculamos la distancia matematica en tiempo real
-        float distancia = Vector2.Distance(transform.position, transformJugador.position);
+        float distancia = Mathf.Abs(transform.position.x - transformJugador.position.x);
 
         // Verificamos si el jugador entro en el rango de vision
         if (distancia <= distanciaMaxima)
@@ -81,12 +82,12 @@ public class TrampaColumna : MonoBehaviour
 
     private void AplicarDanoGradual()
     {
-        if (estadoActual > 0)
+        if (estadoActual > 0 && saludJugador != null)
         {
             float multiplicadorDano = (float)estadoActual / (fasesColumna.Length - 1);
             float danoAAplicar = danoMaximoPorSegundo * multiplicadorDano * Time.deltaTime;
 
-            Debug.Log($"Boca Fase {estadoActual} - Dano aplicado: {danoAAplicar}");
+            saludJugador.RecibirDano(danoAAplicar); // Aplicamos el daño directo al Cartógrafo
         }
     }
 }
